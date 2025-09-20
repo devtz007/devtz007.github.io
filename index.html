@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <!--Fonts-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome 6 Free -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <link rel="shortcut icon" type="image/png" href="icon/favicon.png" />
+    <link rel="stylesheet" href="style.css?v=20250919" />
+    <title>About Mohaiminul Tazim devtz007</title>
+  </head>
+  <body id="body">
+    <main id="main">
+      <div class="hamburger">
+        <button id="hamburger-enter" onclick="clickBurger()">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+      <sidebar>
+        <button
+          id="hamburger-exit"
+          class="hamburger-exit"
+          onclick="clickCross()"
+        >
+          <i class="fab fa-xing"></i>
+        </button>
+        <nav class="nav-bar">
+          <button class="page-btn pfPicBtn" data-page="1">
+            <i class="fas fa-user-circle btn-active"></i>
+          </button>
+          <button class="page-btn infoBtn" data-page="2">
+            <i class="fas fa-address-card"></i>
+          </button>
+          <button class="page-btn skillBtn" data-page="3">
+            <i class="fas fa-laptop-code"></i>
+          </button>
+          <button class="page-btn hireMeBtn" data-page="4">
+            <i class="fab fa-hire-a-helper"></i>
+          </button>
+          <button class="page-btn hireMeBtn" data-page="5">
+            <i class="fas fa-exclamation-triangle"></i>
+          </button>
+        </nav>
+      </sidebar>
+      <div class="page-container">
+        <section id="page1" class="profile page">
+          <div class="centering">
+            <div class="my_container_1">
+              <div class="profile-image">
+                <div class="clock">
+                  <div class="clock-center"></div>
+                  <div id="seconds">
+                    <div class="half1"></div>
+                    <div class="half2"></div>
+                  </div>
+                  <div id="minutes">
+                    <div class="half1"></div>
+                    <div class="half2"></div>
+                  </div>
+                  <div id="hours">
+                    <div class="half1"></div>
+                    <div class="half2"></div>
+                  </div>
+                  <div class="twelve">12</div>
+                  <div class="three">3</div>
+                  <div class="six">6</div>
+                  <div class="nine">9</div>
+                </div>
+              </div>
+              <h1>Mohaiminul Tazim (devtz007)</h1>
+              <div class="social-icons">
+                <a target="_blank" href="https://www.facebook.com/devtz007"
+                  ><i class="fab fa-facebook"></i
+                ></a>
+                <a target="_blank" href="https://x.com/devtz007"
+                  ><i class="fab fa-solid fa-x"></i>
+                </a>
+                <a target="_blank" href="https://www.linkedin.com/in/devtz007/"
+                  ><i class="fab fa-linkedin"></i
+                ></a>
+              </div>
+              <a
+                class="btn-type-1 cv-download"
+                target="_blank"
+                href="assets/cv/devtz007_front_end_web_developing_cv.pdf"
+                ><i class="fas fa-file-pdf"></i>Download CV</a
+              >
+            </div>
+          </div>
+        </section>
+        <section id="page2" class="info page">
+          <div class="centering">
+            <div class="my_container_1">
+              <h2>About Me</h2>
+              <p class="p2">
+                Full Stack Web Developer specializing in modern web technologies
+                and secure software development. Proficient in front-end
+                technologies, frameworks, and libraries such as Next.js 15,
+                React, TypeScript, Vanilla JavaScript, HTML5, CSS, SCSS,
+                Tailwind, and Bootstrap. Skilled in back-end development using
+                Node.js, PHP, MySQL, and SQL, with strong experience in RESTful
+                APIs, JSON, AJAX, and custom WordPress theme development.
+                Possesses excellent expertise in cybersecurity, ensuring
+                software is built with robust security practices while
+                identifying vulnerabilities in software and websites through bug
+                hunting. Experienced with Git, GitHub, DevOps, and collaborative
+                development workflows. Also familiar with UI/UX design tools
+                such as Figma. Committed to building performant, scalable, and
+                secure web applications while solving security flaws in
+                websites.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section id="page3" class="skills page">
+          <div class="centering">
+            <div class="my_container_1">
+              <h2>Technical Skills</h2>
+              <div class="skill-bar">
+                <p class="p1">
+                  Next.js15, React, TypeScript, Vanilla JavaScript
+                </p>
+                <div class="skill-container">
+                  <div class="skill frontend">90%</div>
+                </div>
+
+                <p class="p1">HTML5, CSS3, SCSS, Tailwind, Bootstrap</p>
+                <div class="skill-container">
+                  <div class="skill styling">90%</div>
+                </div>
+
+                <p class="p1">
+                  PHP, SQL, RDBMS (MySQL, PostgreSQL, SQLite), JSON, AJAX,
+                  RESTful API
+                </p>
+                <div class="skill-container">
+                  <div class="skill backend">85%</div>
+                </div>
+
+                <p class="p1">WordPress</p>
+                <div class="skill-container">
+                  <div class="skill wordpress">85%</div>
+                </div>
+
+                <p class="p1">Cyber Security</p>
+                <div class="skill-container">
+                  <div class="skill security">80%</div>
+                </div>
+
+                <p class="p1">Git, Github</p>
+                <div class="skill-container">
+                  <div class="skill version-control">90%</div>
+                </div>
+
+                <p class="p1">Figma, Photoshop</p>
+                <div class="skill-container">
+                  <div class="skill design">90%</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--<section id="page4" class="preWorks page">
+          <div class="centering">
+            <div id="page4-btn-container">
+              <button
+                id="page4-btn1"
+                onclick="imgChange(1)"
+                class="page4-btn-active"
+              >
+                <img src="icon/web_64x.png" alt="graphic_icon" />
+              </button>
+              <button id="page4-btn2" onclick="imgChange(2)" class="">
+                <img src="icon/gra_64x.png" alt="web_icon" />
+              </button>
+            </div>
+            <div id="SIDE-BAR">
+              <div
+                id="image-container1"
+                onclick="imgCont(1)"
+                class="image-container image-container-active"
+              >
+                <div class="img">
+                  <img src="picture/profileTazin.png" alt="" />
+                  <div class="image-text">
+                    <a href="#"><i class="fas fa-lock"></i></a>
+                    <a
+                      target="_blank"
+                      href="https://profiletazin.firebaseapp.com"
+                      >VISIT</a
+                    >
+                  </div>
+                </div>
+                <div id="imgLock" class="img">
+                  <img src="picture/university.jpg" alt="" />
+                  <div class="image-text">
+                    <a href="#"><i class="fas fa-lock"></i></a>
+                    <a
+                      target="_blank"
+                      href="https://university-b97cb.firebaseapp.com/"
+                      >VISIT</a
+                    >
+                  </div>
+                </div>
+                <div class="img">
+                  <img src="picture/Mosaic Layout.jpg" alt="" />
+                  <div class="image-text">
+                    <a href="#"><i class="fas fa-lock"></i></a>
+                    <a
+                      target="_blank"
+                      href="https://responsive-mosaic-layout.firebaseapp.com/"
+                      >VISIT</a
+                    >
+                  </div>
+                </div>
+                <div class="img">
+                  <img src="picture/i4.jpg" alt="" />
+                  <div class="image-text-locked">
+                    <a href="#"><i class="fas fa-lock"></i></a>
+                    <a target="_blank" href="#">VISIT</a>
+                  </div>
+                </div>
+                <div class="img">
+                  <img src="picture/i5.jpg" alt="" />
+                  <div class="image-text-locked">
+                    <a href="#"><i class="fas fa-lock"></i></a>
+                    <a target="_blank" href="#">VISIT</a>
+                  </div>
+                </div>
+                <div class="img">
+                  <img src="picture/i6.jpg" alt="" />
+                  <div class="image-text-locked">
+                    <a href="#"><i class="fas fa-lock"></i></a>
+                    <a target="_blank" href="#">VISIT</a>
+                  </div>
+                </div>
+                <div class="img">
+                  <img src="picture/i7.jpg" alt="" />
+                  <div class="image-text-locked">
+                    <a href="#"><i class="fas fa-lock"></i></a>
+                    <a target="_blank" href="#">VISIT</a>
+                  </div>
+                </div>
+                <div class="img">
+                  <img src="picture/i8.jpg" alt="" />
+                  <div class="image-text-locked">
+                    <a href="#"><i class="fas fa-lock"></i></a>
+                    <a target="_blank" href="#">VISIT</a>
+                  </div>
+                </div>
+                <div class="img">
+                  <img src="picture/i9.jpg" alt="" />
+                  <div class="image-text-locked">
+                    <a href="#"><i class="fas fa-lock"></i></a>
+                    <a target="_blank" href="#">VISIT</a>
+                  </div>
+                </div>
+                <div class="img">
+                  <img src="picture/i10.jpg" alt="" />
+                  <div class="image-text-locked">
+                    <a href="#"><i class="fas fa-lock"></i></a>
+                    <a target="_blank" href="#">VISIT</a>
+                  </div>
+                </div>
+              </div>
+              <div
+                id="image-container2"
+                onclick="imgCont(2)"
+                class="image-container"
+              >
+                <div class="img">
+                  <img src="picture/i11.jpg" alt="" />
+                  <div class="image-text-locked">
+                    <a href="#"><i class="fas fa-lock"></i></a>
+                    <a target="_blank" href="#">VISIT</a>
+                  </div>
+                </div>
+                <div class="img">
+                  <img src="picture/i12.jpg" alt="" />
+                  <div class="image-text-locked">
+                    <a href="#"><i class="fas fa-lock"></i></a>
+                    <a target="_blank" href="#">VISIT</a>
+                  </div>
+                </div>
+                <div class="img">
+                  <img src="picture/i13.jpg" alt="" />
+                  <div class="image-text-locked">
+                    <a href="#"><i class="fas fa-lock"></i></a>
+                    <a target="_blank" href="#">VISIT</a>
+                  </div>
+                </div>
+                <div class="img">
+                  <img src="picture/i14.jpg" alt="" />
+                  <div class="image-text-locked">
+                    <a href="#"><i class="fas fa-lock"></i></a>
+                    <a target="_blank" href="#">VISIT</a>
+                  </div>
+                </div>
+                <div class="img">
+                  <img src="picture/i15.jpg" alt="" />
+                  <div class="image-text-locked">
+                    <a href="#"><i class="fas fa-lock"></i></a>
+                    <a target="_blank" href="#">VISIT</a>
+                  </div>
+                </div>
+                <div class="img">
+                  <img src="picture/i16.jpg" alt="" />
+                  <div class="image-text-locked">
+                    <a href="#"><i class="fas fa-lock"></i></a>
+                    <a target="_blank" href="#">VISIT</a>
+                  </div>
+                </div>
+                <div class="img">
+                  <img src="picture/i17.jpg" alt="" />
+                  <div class="image-text-locked">
+                    <a href="#"><i class="fas fa-lock"></i></a>
+                    <a target="_blank" href="#">VISIT</a>
+                  </div>
+                </div>
+                <div class="img">
+                  <img src="picture/i18.jpg" alt="" />
+                  <div class="image-text-locked">
+                    <a href="#"><i class="fas fa-lock"></i></a>
+                    <a target="_blank" href="#">VISIT</a>
+                  </div>
+                </div>
+                <div class="img">
+                  <img src="picture/i19.jpg" alt="" />
+                  <div class="image-text-locked">
+                    <a href="#"><i class="fas fa-lock"></i></a>
+                    <a target="_blank" href="#">VISIT</a>
+                  </div>
+                </div>
+                <div class="img">
+                  <img src="picture/i20.jpg" alt="" />
+                  <div class="image-text-locked">
+                    <a href="#"><i class="fas fa-lock"></i></a>
+                    <a target="_blank" href="#">VISIT</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="show-more-btn">
+              <a target="_blank" id="show-more1" href="#">Show All</a>
+              <a target="_blank" id="show-more2" href="#">Show All</a>
+            </div>
+          </div>
+        </section>-->
+        <section id="page5" class="hireMe page">
+          <div class="centering">
+            <div class="my_container_1">
+              <h2>Contact Me</h2>
+              <div class="hire-me-btns">
+                <a target="_blank" href="mailto:dev.mohaiminul@gmail.com"
+                  ><i class="fas fa-envelope"></i> dev.mohaiminul@gmail.com</a
+                >
+                <a target="_blank" href="https://wa.me/+8801307565052"
+                  ><i class="fab fa-whatsapp"></i>+880 1307565052</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="page6" class="terms-condition page">
+          <div class="centering">
+            <div class="my_container_1">
+              <h2>Copyright Policy</h2>
+              <p class="p2">
+                This website and its content is copyright of ©
+                https://www.techjork.com 2024. Any redistribution or
+                reproduction of part or all of the contents in any form is
+                prohibited by any means.
+              </p>
+              <h2>All right reserve</h2>
+              <a
+                href="https://www.techjork.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Techjork IT Solutions Limited
+              </a>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script src="scripts.js"></script>
+  </body>
+</html>
