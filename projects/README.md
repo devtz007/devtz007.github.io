@@ -1,4 +1,4 @@
-# Mohaiminul Tazim – Demo Projects and Proof of Work.
+## Demo Projects and Proof of Work.
 
 ## Web Development
 
