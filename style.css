@@ -304,7 +304,7 @@ body .page-container .page::after {
   -webkit-backdrop-filter: blur(3px);
           backdrop-filter: blur(3px);
 }
-body .centering {
+body .scroll-bar {
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -315,11 +315,11 @@ body .centering {
   padding: 0 50px;
 }
 @media (width <= 768px) {
-  body .centering {
+  body .scroll-bar {
     width: 100%;
   }
 }
-body .centering .my_container_1 {
+body .scroll-bar .my_container_1 {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -898,7 +898,7 @@ sidebar nav .btn-active {
 .info::before {
   background-image: url("./assets/media/info.jpg");
 }
-.info .centering {
+.info .scroll-bar {
   max-height: 80%;
 }
 .info .my_container_1 {
@@ -913,7 +913,7 @@ sidebar nav .btn-active {
 .skills::before {
   background-image: url("./assets/media/skills.jpg");
 }
-.skills .centering {
+.skills .scroll-bar {
   max-height: 80%;
 }
 .skills h2 {

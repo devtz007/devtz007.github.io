@@ -31,7 +31,7 @@ $btn3: #ed143d !default;
 $btn4: #4caf50 !default;
 $btn5: #8faadc !default;
 
-//*---- html, body, main, page, centering------*/
+//*---- html, body, main, page, scroll-bar------*/
 html {
   font-family: "Poppins", Arial, Helvetica, sans-serif;
   overflow: hidden;
@@ -87,7 +87,7 @@ body {
     }
   }
 
-  .centering {
+  .scroll-bar {
     @include mif.flex-col;
     gap: 50px;
     width: 70%;
@@ -600,7 +600,7 @@ sidebar {
     background-image: url("./assets/media/info.jpg");
   }
 
-  .centering {
+  .scroll-bar {
     max-height: 80%;
   }
   .my_container_1 {
@@ -619,7 +619,7 @@ sidebar {
     background-image: url("./assets/media/skills.jpg");
   }
 
-  .centering {
+  .scroll-bar {
     max-height: 80%;
   }
   h2 {
