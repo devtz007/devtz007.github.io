@@ -307,19 +307,42 @@ body .page-container .page::after {
 body .scroll-bar {
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
   gap: 50px;
-  width: 70%;
+  width: 100%;
+  max-height: 80%;
   z-index: 1;
   overflow: hidden;
   overflow-y: auto;
-  padding: 0 50px;
 }
 @media (width <= 768px) {
   body .scroll-bar {
     width: 100%;
   }
 }
-body .scroll-bar .my_container_1 {
+body .scroll-bar .width_wrapper_type_1 {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 70%;
+}
+@media (width <= 768px) {
+  body .scroll-bar .width_wrapper_type_1 {
+    width: 80%;
+  }
+}
+@media (width <= 520px) {
+  body .scroll-bar .width_wrapper_type_1 {
+    width: 85%;
+  }
+}
+@media (width <= 320px) {
+  body .scroll-bar .width_wrapper_type_1 {
+    width: 90%;
+  }
+}
+body .my_container_type_1 {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -898,16 +921,31 @@ sidebar nav .btn-active {
 .info::before {
   background-image: url("./assets/media/info.jpg");
 }
-.info .scroll-bar {
-  max-height: 80%;
-}
-.info .my_container_1 {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
 .info h2 {
   color: #3097bf;
+}
+.info .my_container_2 .tech-stack {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+@media (width <= 768px) {
+  .info .my_container_2 .tech-stack img {
+    width: 100px;
+  }
+}
+@media (width <= 520px) {
+  .info .my_container_2 .tech-stack img {
+    width: 90px;
+  }
+}
+@media (width <= 320px) {
+  .info .my_container_2 .tech-stack img {
+    width: 80px;
+  }
 }
 
 .skills::before {
