@@ -78,3 +78,15 @@
     transform: translateY(-2px);
   }
 }
+
+// image content
+@mixin image-content-type-1($objectFit: contain, $objectPosition: center) {
+  @include mif.flex-jc-ac;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: $objectFit;
+    object-position: $objectPosition;
+  }
+}

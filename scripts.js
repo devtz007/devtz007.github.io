@@ -50,8 +50,8 @@ function switchPage(id) {
   });
 
   // Change container color
-  document.getElementById("page-container").style.backgroundColor =
-    pageColors[id - 1];
+  /*document.getElementById("page-container").style.backgroundColor =
+    pageColors[id - 1];*/
 }
 
 //Image container change page-4
@@ -71,20 +71,19 @@ function imgChange(id) {
 
 /* profile image clock*/
 function imageClock() {
-  with (new Date()) {
-    h = 30 * ((getHours() % 12) + getMinutes() / 60); // 30 degrees hour
-    m = 6 * getMinutes(); // 6 degrees every minute
-    s = 6 * getSeconds(); // 6 degrees every second
-    // setting the rotate CSS attribute to those degree values -->
-    document.getElementById("seconds").style.cssText =
-      "-webkit-transform:rotate(" + s + "deg);";
-    document.getElementById("minutes").style.cssText =
-      "-webkit-transform:rotate(" + m + "deg);";
-    document.getElementById("hours").style.cssText =
-      "-webkit-transform:rotate(" + h + "deg);";
+  const now = new Date();
+  const h = 30 * ((now.getHours() % 12) + now.getMinutes() / 60); // 30 degrees hour
+  const m = 6 * now.getMinutes(); // 6 degrees every minute
+  const s = 6 * now.getSeconds(); // 6 degrees every second
+  // setting the rotate CSS attribute to those degree values -->
+  document.getElementById("seconds").style.cssText =
+    "-webkit-transform:rotate(" + s + "deg);";
+  document.getElementById("minutes").style.cssText =
+    "-webkit-transform:rotate(" + m + "deg);";
+  document.getElementById("hours").style.cssText =
+    "-webkit-transform:rotate(" + h + "deg);";
 
-    setTimeout(imageClock, 1000); // calling the function every second
-  }
+  setTimeout(imageClock, 1000); // calling the function every second
 }
 window.onload = imageClock;
 imageClock();
@@ -100,7 +99,7 @@ function colorChanges() {
     c = (c + 1) % color.length;
   }
 }
-setInterval(colorChanges, 1000);
+/*setInterval(colorChanges, 1000);*/
 
 /*var k = 0;
 var tiktok = ["red", "green"];
@@ -126,3 +125,42 @@ function clickCross() {
   document.getElementById("hamburger-enter").style.display = "flex";
   document.getElementById("hamburger-exit").style.display = "none";
 }
+
+// Create and append iframe
+document.addEventListener("DOMContentLoaded", function () {
+  const container = document.querySelector(".thm-iframe-container");
+  if (!container) return;
+
+  const iframe = document.createElement("iframe");
+  iframe.id = "thm-iframe";
+  iframe.src =
+    "https://tryhackme.com/api/v2/badges/public-profile?userPublicId=227999";
+  iframe.style.cssText = `width: 100%;`;
+  iframe.classList.add("thm-iframe");
+
+  iframe.addEventListener("load", function () {
+    try {
+      const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+      const iframeBody = iframeDoc.body;
+      console.log(iframeBody);
+
+      // Example: add styles to iframe body
+      iframeBody.style.backgroundColor = "black";
+      iframeBody.style.color = "lime";
+    } catch (err) {
+      console.error(
+        "Cannot access iframe body due to cross-origin restrictions",
+        err
+      );
+    }
+  });
+
+  // container.appendChild(iframe);
+});
+
+// Github state forced update
+window.addEventListener("DOMContentLoaded", () => {
+  const img = document.getElementById("github-stats");
+  // Append a timestamp to bust cache
+  img.src = img.src.split("&v=")[0] + "&v=" + Date.now();
+});
