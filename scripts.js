@@ -9,7 +9,7 @@ autoResizeDiv();
 
 //Page Show-hide and color change
 // Colors for each page
-const pageColors = ["#ff7a18", "#3097bf", "#ed143d", "#4caf50", "#8faadc"];
+const pageColors = ["#ff7a18", "#ed143d", "#4caf50", "#8faadc"];
 
 // Hide all pages except the first
 const pages = document.querySelectorAll(".page");

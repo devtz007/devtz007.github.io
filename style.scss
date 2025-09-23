@@ -26,10 +26,10 @@ $highlight-accent: #ffd662 !default;
 $hamburger-color: #3097bf !default;
 $button-bg: transparent !default;
 $btn1: #ff7a18 !default;
-$btn2: #3097bf !default;
-$btn3: #ed143d !default;
-$btn4: #4caf50 !default;
-$btn5: #8faadc !default;
+$btn2: #ed143d !default;
+$btn3: #4caf50 !default;
+$btn4: #8faadc !default;
+//$btn5: #8faadc !default;
 
 //*---- html, body, main, page, scroll-bar------*/
 html {
@@ -116,8 +116,16 @@ body {
     }
   }
 
+  // container
   .my_container_type_1 {
     @include mif.flex-col-ac;
+  }
+  .sub_container_1 {
+    @include mif.flex-col;
+    gap: 30px;
+    .row {
+      @include mif.flex-col-jc-ac;
+    }
   }
 
   .image_content_type_1 {
@@ -165,12 +173,15 @@ h2 {
 
   @media (width <= 768px) {
     font-size: 3em;
+    margin-bottom: 25px;
   }
   @media (width <= 520px) {
     font-size: 2em;
+    margin-bottom: 20px;
   }
   @media (width <= 320px) {
     font-size: 1.5em;
+    margin-bottom: 15px;
   }
 }
 h3 {
@@ -180,10 +191,15 @@ h3 {
   color: $text-primary;
 
   @media (width <= 768px) {
+    font-size: 1.8em;
+    margin-bottom: 15px;
   }
   @media (width <= 520px) {
+    font-size: 1.4em;
   }
   @media (width <= 320px) {
+    font-size: 1.2em;
+    margin-bottom: 10px;
   }
 }
 
@@ -329,9 +345,6 @@ sidebar {
       }
       &:nth-child(4) {
         color: $btn4;
-      }
-      &:nth-child(5) {
-        color: $btn5;
       }
 
       i {
@@ -584,14 +597,12 @@ sidebar {
   .social-icons {
     @include mif.flex-row-ac;
     gap: 10px;
+    margin: 20px 0;
     a {
+      @include mif.flex-jc-ac;
       text-align: center;
       color: $text-primary;
       transition: all 0.6s ease;
-
-      &:hover {
-        color: #88d958;
-      }
 
       &:nth-child(1) {
         color: $social-facebook;
@@ -607,6 +618,12 @@ sidebar {
 
       i {
         font-size: 2em;
+        transition: color 0.6s ease-in-out;
+
+        &:hover {
+          color: #88d958;
+        }
+
         @media (width <= 768px) {
           font-size: 1.8em;
         }
@@ -624,9 +641,13 @@ sidebar {
     @include mre.btn-type-1(
       $text-color: #25d366,
       $border-color: #25d366,
-      $bg-color: #292f33,
-      $hover-bg: #25d366,
-      $hover-color: white
+      $bg-color: transparent,
+      $hover-bg-color: #88d958,
+      $hover-color: white,
+      $gradient-start: #88d958,
+      $gradient-mid: #25d366,
+      $gradient-end: #88d958,
+      $use-gradient: true
     );
   }
 }
@@ -641,11 +662,12 @@ sidebar {
   }
 
   h2 {
-    color: #3097bf;
+    color: $btn2;
   }
 
   .my_container_2 {
-    .tech-stack {
+    .technical-skills,
+    .soft-skills {
       @include mif.flex-row-jc-ac;
       gap: 10px;
       flex-wrap: wrap;
@@ -666,27 +688,22 @@ sidebar {
 
   .my_container_3 {
     .sub_container_1_1 {
-      @include mif.flex-col;
-      gap: 30px;
       .row {
-        @include mif.flex-col-jc-ac;
-        gap: 10px;
-
         &_1 {
           a {
             @include mre.btn-type-1(
-              $text-color: #25d366,
-              $border-color: #25d366,
-              $bg-color: #292f33,
-              $hover-bg: #25d366,
-              $hover-color: white
+              $text-color: #dc143c,
+              $border-color: #dc143c,
+              // crimson
+              $gradient-start: #dc143c,
+              // crimson
+              $gradient-mid: #ff4500,
+              // orange-red for a smoother blend
+              $gradient-end: #dc143c // crimson
             );
           }
         }
 
-        h3 {
-          margin-bottom: 0;
-        }
         .image_content_type_1 {
           width: 500px;
         }
@@ -696,7 +713,7 @@ sidebar {
 }
 
 // skills
-.skills {
+/*.skills {
   &::before {
     background-image: url("./assets/media/skills.jpg");
   }
@@ -853,7 +870,7 @@ sidebar {
       width: 90%;
     }
   }
-}
+}*/
 
 // hireMe
 .hireMe {
@@ -868,29 +885,21 @@ sidebar {
     a {
       &:nth-child(1) {
         @include mre.btn-type-1(
-          $text-color: #ea4335,
-          // default text color
-          $border-color: #ea4335,
-          // default border color
-          $bg-color: #292f33,
-          // default background
-          $hover-bg: #ea4335,
-          // default hover background
-          $hover-color: white
+          $text-color: #d44638,
+          $border-color: #d44638,
+          $gradient-start: #d44638,
+          $gradient-mid: #ff6f61,
+          $gradient-end: #d44638
         );
       }
 
       &:nth-child(2) {
         @include mre.btn-type-1(
           $text-color: #25d366,
-          // default text color
           $border-color: #25d366,
-          // default border color
-          $bg-color: #292f33,
-          // default background
-          $hover-bg: #25d366,
-          // default hover background
-          $hover-color: white
+          $gradient-start: #25d366,
+          $gradient-mid: #88d958,
+          $gradient-end: #25d366
         );
       }
     }

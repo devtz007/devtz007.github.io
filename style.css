@@ -345,6 +345,17 @@ body .my_container_type_1 {
   flex-direction: column;
   align-items: center;
 }
+body .sub_container_1 {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+body .sub_container_1 .row {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 body .image_content_type_1 {
   display: flex;
   justify-content: center;
@@ -400,16 +411,19 @@ h2 {
 @media (width <= 768px) {
   h2 {
     font-size: 3em;
+    margin-bottom: 25px;
   }
 }
 @media (width <= 520px) {
   h2 {
     font-size: 2em;
+    margin-bottom: 20px;
   }
 }
 @media (width <= 320px) {
   h2 {
     font-size: 1.5em;
+    margin-bottom: 15px;
   }
 }
 
@@ -419,6 +433,24 @@ h3 {
   margin-bottom: 20px;
   color: #e5edf7;
 }
+@media (width <= 768px) {
+  h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+  }
+}
+@media (width <= 520px) {
+  h3 {
+    font-size: 1.4em;
+  }
+}
+@media (width <= 320px) {
+  h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+}
+
 .p1 {
   color: #a0b3c7;
   font-size: 1.2em;
@@ -572,15 +604,12 @@ sidebar nav button:nth-child(1) {
   color: #ff7a18;
 }
 sidebar nav button:nth-child(2) {
-  color: #3097bf;
-}
-sidebar nav button:nth-child(3) {
   color: #ed143d;
 }
-sidebar nav button:nth-child(4) {
+sidebar nav button:nth-child(3) {
   color: #4caf50;
 }
-sidebar nav button:nth-child(5) {
+sidebar nav button:nth-child(4) {
   color: #8faadc;
 }
 sidebar nav button i {
@@ -859,14 +888,15 @@ sidebar nav .btn-active {
   flex-direction: row;
   align-items: center;
   gap: 10px;
+  margin: 20px 0;
 }
 .profile .social-icons a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   color: #e5edf7;
   transition: all 0.6s ease;
-}
-.profile .social-icons a:hover {
-  color: #88d958;
 }
 .profile .social-icons a:nth-child(1) {
   color: #1877f2;
@@ -879,6 +909,10 @@ sidebar nav .btn-active {
 }
 .profile .social-icons a i {
   font-size: 2em;
+  transition: color 0.6s ease-in-out;
+}
+.profile .social-icons a i:hover {
+  color: #88d958;
 }
 @media (width <= 768px) {
   .profile .social-icons a i {
@@ -896,6 +930,8 @@ sidebar nav .btn-active {
   }
 }
 .profile .cv-download {
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -903,11 +939,20 @@ sidebar nav .btn-active {
   gap: 10px;
   font-size: 1.1rem;
   padding: 10px 22px;
-  transition: all 0.3s ease;
   text-align: center;
   border-radius: 8px;
-  color: #25d366;
   border: 1px solid #25d366;
+  background: transparent;
+  color: #25d366;
+  z-index: 0;
+  will-change: transform, color;
+  /* Make content above the pseudo-element */
+  transition: transform 0.3s ease-in-out;
+}
+.profile .cv-download > * {
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease-in-out;
 }
 @media (width <= 768px) {
   .profile .cv-download {
@@ -925,10 +970,27 @@ sidebar nav .btn-active {
     padding: 6px 18px;
   }
 }
-.profile .cv-download:hover {
-  background: #25d366;
+.profile .cv-download::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, #88d958 0%, #25d366 50%, #88d958 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 0;
+  will-change: opacity;
+}
+.profile .cv-download span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+.profile .cv-download:hover > * {
   color: white;
-  transform: translateY(-2px);
+}
+.profile .cv-download:hover::before {
+  opacity: 1;
 }
 
 .info {
@@ -940,9 +1002,10 @@ sidebar nav .btn-active {
   background-image: url("./assets/media/info.jpg");
 }
 .info h2 {
-  color: #3097bf;
+  color: #ed143d;
 }
-.info .my_container_2 .tech-stack {
+.info .my_container_2 .technical-skills,
+.info .my_container_2 .soft-skills {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -951,33 +1014,26 @@ sidebar nav .btn-active {
   flex-wrap: wrap;
 }
 @media (width <= 768px) {
-  .info .my_container_2 .tech-stack img {
+  .info .my_container_2 .technical-skills img,
+  .info .my_container_2 .soft-skills img {
     width: 100px;
   }
 }
 @media (width <= 520px) {
-  .info .my_container_2 .tech-stack img {
+  .info .my_container_2 .technical-skills img,
+  .info .my_container_2 .soft-skills img {
     width: 90px;
   }
 }
 @media (width <= 320px) {
-  .info .my_container_2 .tech-stack img {
+  .info .my_container_2 .technical-skills img,
+  .info .my_container_2 .soft-skills img {
     width: 80px;
   }
 }
-.info .my_container_3 .sub_container_1_1 {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-}
-.info .my_container_3 .sub_container_1_1 .row {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-}
 .info .my_container_3 .sub_container_1_1 .row_1 a {
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -985,11 +1041,20 @@ sidebar nav .btn-active {
   gap: 10px;
   font-size: 1.1rem;
   padding: 10px 22px;
-  transition: all 0.3s ease;
   text-align: center;
   border-radius: 8px;
-  color: #25d366;
-  border: 1px solid #25d366;
+  border: 1px solid #dc143c;
+  background: transparent;
+  color: #dc143c;
+  z-index: 0;
+  will-change: transform, color;
+  /* Make content above the pseudo-element */
+  transition: transform 0.3s ease-in-out;
+}
+.info .my_container_3 .sub_container_1_1 .row_1 a > * {
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease-in-out;
 }
 @media (width <= 768px) {
   .info .my_container_3 .sub_container_1_1 .row_1 a {
@@ -1007,157 +1072,190 @@ sidebar nav .btn-active {
     padding: 6px 18px;
   }
 }
-.info .my_container_3 .sub_container_1_1 .row_1 a:hover {
-  background: #25d366;
-  color: white;
-  transform: translateY(-2px);
+.info .my_container_3 .sub_container_1_1 .row_1 a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, #dc143c 0%, #ff4500 50%, #dc143c 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 0;
+  will-change: opacity;
 }
-.info .my_container_3 .sub_container_1_1 .row h3 {
-  margin-bottom: 0;
+.info .my_container_3 .sub_container_1_1 .row_1 a span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+.info .my_container_3 .sub_container_1_1 .row_1 a:hover > * {
+  color: white;
+}
+.info .my_container_3 .sub_container_1_1 .row_1 a:hover::before {
+  opacity: 1;
 }
 .info .my_container_3 .sub_container_1_1 .row .image_content_type_1 {
   width: 500px;
 }
 
-.skills::before {
-  background-image: url("./assets/media/skills.jpg");
-}
-.skills .scroll-bar {
-  max-height: 80%;
-}
-.skills h2 {
-  color: crimson;
-}
-.skills .skill-bar {
-  width: 100%;
-}
-.skills .skill-bar p {
-  margin-bottom: 5px;
-}
-.skills .skill-bar .skill-container {
-  overflow: hidden;
-  margin-bottom: 15px;
-  border: 1px solid #202837;
-  border-radius: 99999px;
-  background: linear-gradient(120deg, rgba(11, 18, 31, 0.3) 0%, rgba(11, 18, 31, 0.4) 50%, rgba(11, 18, 31, 0.5) 100%);
-}
-.skills .skill-bar .skill-container .skill {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  height: 2em;
-  text-align: right;
-  padding: 0px 10px;
-  color: white;
-  white-space: nowrap;
-}
-@media (width <= 768px) {
-  .skills .skill-bar .skill-container .skill {
-    font-size: 1.1em;
+/*.skills {
+  &::before {
+    background-image: url("./assets/media/skills.jpg");
   }
-}
-@media (width <= 520px) {
-  .skills .skill-bar .skill-container .skill {
-    font-size: 1em;
-  }
-}
-@media (width <= 320px) {
-  .skills .skill-bar .skill-container .skill {
-    font-size: 0.9em;
-  }
-}
-.skills .frontend {
-  background: linear-gradient(135deg, #61dafb, #007acc);
-  width: 90%;
-  animation: animate-frontend 4s;
-}
-.skills .styling {
-  background: linear-gradient(135deg, #ff6b35, #f7931e);
-  width: 90%;
-  animation: animate-styling 4s;
-}
-.skills .backend {
-  background: linear-gradient(135deg, #777bb4, #4f46e5);
-  width: 85%;
-  animation: animate-backend 4s;
-}
-.skills .wordpress {
-  background: linear-gradient(135deg, #21759b, #23282d);
-  width: 85%;
-  animation: animate-wordpress 4s;
-}
-.skills .security {
-  background: linear-gradient(135deg, #dc2626, #b91c1c);
-  width: 80%;
-  animation: animate-security 4s;
-}
-.skills .version-control {
-  background: linear-gradient(135deg, #24292e, #0366d6);
-  width: 90%;
-  animation: animate-version-control 4s;
-}
-.skills .design {
-  background: linear-gradient(135deg, #f24e1e, #ff7262);
-  width: 90%;
-  animation: animate-design 4s;
-}
-@keyframes animate-frontend {
-  from {
-    width: 10px;
-  }
-  to {
-    width: 90%;
-  }
-}
-@keyframes animate-styling {
-  from {
-    width: 10px;
-  }
-  to {
-    width: 90%;
-  }
-}
-@keyframes animate-backend {
-  from {
-    width: 10px;
-  }
-  to {
-    width: 85%;
-  }
-}
-@keyframes animate-wordpress {
-  from {
-    width: 10px;
-  }
-  to {
-    width: 85%;
-  }
-}
-@keyframes animate-security {
-  from {
-    width: 10px;
-  }
-  to {
-    width: 80%;
-  }
-}
-@keyframes animate-version-control {
-  from {
-    width: 10px;
-  }
-  to {
-    width: 90%;
-  }
-}
-@keyframes animate-design {
-  from {
-    width: 10px;
-  }
-  to {
-    width: 90%;
-  }
-}
 
+  .scroll-bar {
+    max-height: 80%;
+  }
+  h2 {
+    color: crimson;
+  }
+  .skill-bar {
+    width: 100%;
+
+    p {
+      margin-bottom: 5px;
+    }
+
+    .skill-container {
+      overflow: hidden;
+      margin-bottom: 15px;
+      border: 1px solid #202837;
+      border-radius: 99999px;
+      background: linear-gradient(
+        120deg,
+        rgba(11, 18, 31, 0.3) 0%,
+        rgba(11, 18, 31, 0.4) 50%,
+        rgba(11, 18, 31, 0.5) 100%
+      );
+
+      .skill {
+        @include mif.flex-je-ac;
+        height: 2em;
+        text-align: right;
+        padding: 0px 10px;
+        color: white;
+        white-space: nowrap;
+
+        @media (width <= 768px) {
+          font-size: 1.1em;
+        }
+        @media (width <= 520px) {
+          font-size: 1em;
+        }
+        @media (width <= 320px) {
+          font-size: 0.9em;
+        }
+      }
+    }
+  }
+
+  // Skill bars
+  .frontend {
+    background: linear-gradient(135deg, #61dafb, #007acc);
+    width: 90%;
+    animation: animate-frontend 4s;
+  }
+
+  .styling {
+    background: linear-gradient(135deg, #ff6b35, #f7931e);
+    width: 90%;
+    animation: animate-styling 4s;
+  }
+
+  .backend {
+    background: linear-gradient(135deg, #777bb4, #4f46e5);
+    width: 85%;
+    animation: animate-backend 4s;
+  }
+
+  .wordpress {
+    background: linear-gradient(135deg, #21759b, #23282d);
+    width: 85%;
+    animation: animate-wordpress 4s;
+  }
+
+  .security {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+    width: 80%;
+    animation: animate-security 4s;
+  }
+
+  .version-control {
+    background: linear-gradient(135deg, #24292e, #0366d6);
+    width: 90%;
+    animation: animate-version-control 4s;
+  }
+
+  .design {
+    background: linear-gradient(135deg, #f24e1e, #ff7262);
+    width: 90%;
+    animation: animate-design 4s;
+  }
+
+  // Keyframes
+  @keyframes animate-frontend {
+    from {
+      width: 10px;
+    }
+    to {
+      width: 90%;
+    }
+  }
+
+  @keyframes animate-styling {
+    from {
+      width: 10px;
+    }
+    to {
+      width: 90%;
+    }
+  }
+
+  @keyframes animate-backend {
+    from {
+      width: 10px;
+    }
+    to {
+      width: 85%;
+    }
+  }
+
+  @keyframes animate-wordpress {
+    from {
+      width: 10px;
+    }
+    to {
+      width: 85%;
+    }
+  }
+
+  @keyframes animate-security {
+    from {
+      width: 10px;
+    }
+    to {
+      width: 80%;
+    }
+  }
+
+  @keyframes animate-version-control {
+    from {
+      width: 10px;
+    }
+    to {
+      width: 90%;
+    }
+  }
+
+  @keyframes animate-design {
+    from {
+      width: 10px;
+    }
+    to {
+      width: 90%;
+    }
+  }
+}*/
 .hireMe h2 {
   color: #4caf50;
 }
@@ -1167,6 +1265,8 @@ sidebar nav .btn-active {
   gap: 15px;
 }
 .hireMe .hire-me-btns a:nth-child(1) {
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -1174,11 +1274,20 @@ sidebar nav .btn-active {
   gap: 10px;
   font-size: 1.1rem;
   padding: 10px 22px;
-  transition: all 0.3s ease;
   text-align: center;
   border-radius: 8px;
-  color: #ea4335;
-  border: 1px solid #ea4335;
+  border: 1px solid #d44638;
+  background: transparent;
+  color: #d44638;
+  z-index: 0;
+  will-change: transform, color;
+  /* Make content above the pseudo-element */
+  transition: transform 0.3s ease-in-out;
+}
+.hireMe .hire-me-btns a:nth-child(1) > * {
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease-in-out;
 }
 @media (width <= 768px) {
   .hireMe .hire-me-btns a:nth-child(1) {
@@ -1196,12 +1305,31 @@ sidebar nav .btn-active {
     padding: 6px 18px;
   }
 }
-.hireMe .hire-me-btns a:nth-child(1):hover {
-  background: #ea4335;
+.hireMe .hire-me-btns a:nth-child(1)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, #d44638 0%, #ff6f61 50%, #d44638 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 0;
+  will-change: opacity;
+}
+.hireMe .hire-me-btns a:nth-child(1) span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+.hireMe .hire-me-btns a:nth-child(1):hover > * {
   color: white;
-  transform: translateY(-2px);
+}
+.hireMe .hire-me-btns a:nth-child(1):hover::before {
+  opacity: 1;
 }
 .hireMe .hire-me-btns a:nth-child(2) {
+  position: relative;
+  overflow: hidden;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -1209,11 +1337,20 @@ sidebar nav .btn-active {
   gap: 10px;
   font-size: 1.1rem;
   padding: 10px 22px;
-  transition: all 0.3s ease;
   text-align: center;
   border-radius: 8px;
-  color: #25d366;
   border: 1px solid #25d366;
+  background: transparent;
+  color: #25d366;
+  z-index: 0;
+  will-change: transform, color;
+  /* Make content above the pseudo-element */
+  transition: transform 0.3s ease-in-out;
+}
+.hireMe .hire-me-btns a:nth-child(2) > * {
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease-in-out;
 }
 @media (width <= 768px) {
   .hireMe .hire-me-btns a:nth-child(2) {
@@ -1231,10 +1368,27 @@ sidebar nav .btn-active {
     padding: 6px 18px;
   }
 }
-.hireMe .hire-me-btns a:nth-child(2):hover {
-  background: #25d366;
+.hireMe .hire-me-btns a:nth-child(2)::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, #25d366 0%, #88d958 50%, #25d366 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 0;
+  will-change: opacity;
+}
+.hireMe .hire-me-btns a:nth-child(2) span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+.hireMe .hire-me-btns a:nth-child(2):hover > * {
   color: white;
-  transform: translateY(-2px);
+}
+.hireMe .hire-me-btns a:nth-child(2):hover::before {
+  opacity: 1;
 }
 
 .terms-condition h2 {
