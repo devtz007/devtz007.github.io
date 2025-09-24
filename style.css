@@ -689,7 +689,7 @@ sidebar nav .btn-active {
   background-position: center;
   background-size: 50%;
   border-radius: 100%;
-  opacity: 0.04;
+  opacity: 0.02;
   transition: 0.6s all ease;
 }
 .profile .clock:hover::before {
