@@ -15,6 +15,12 @@ $brand-cyan: #2ca9bc !default;
 $brand-teal: #319197 !default;
 $brand-pink: #e7717d !default;
 
+//clock
+$second: #ffd662;
+$min: #4caf50;
+$hour: #1da1f2;
+$dot: #ffd662;
+
 //social icons color
 $social-facebook: #1877f2 !default;
 $social-twitter: #1da1f2 !default;
@@ -248,17 +254,13 @@ a {
 //*---- Hamburger ----*/
 .hamburger {
   position: absolute;
-  top: 25px;
-  left: 25px;
+  z-index: 2;
+  top: 10px;
+  left: 10px;
   font-size: 2em;
   font-weight: 900;
   color: $hamburger-exit;
-  position: absolute;
-  top: 25px;
-  left: 25px;
-  z-index: 2;
   font-size: 25px;
-  display: flex;
   display: none;
 
   @media (max-width: 768px) {
@@ -388,7 +390,7 @@ sidebar {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: $panel-bg;
+    background: transparent;
 
     @media (width <= 768px) {
       height: 225px;
@@ -408,21 +410,22 @@ sidebar {
       height: 100%;
       content: "";
       position: absolute;
-      top: 0;
-      left: 0;
-      background-image: url("./assets/media/mohaiminul_tazin.png");
+      top: -10px;
+      left: -5px;
+      background-color: transparent;
+      background-image: url("./assets/media/tz1_glass.png");
       background-repeat: no-repeat;
       background-position: center;
-      background-size: cover;
+      background-size: 50%;
       border-radius: 100%;
-      opacity: 0.2;
+      opacity: 0.04;
       transition: 0.6s all ease;
     }
 
     &:hover {
       &::before {
         opacity: 1;
-        z-index: 5;
+        z-index: 6;
       }
     }
 
@@ -472,13 +475,13 @@ sidebar {
     .clock-center {
       width: 15px;
       height: 15px;
-      background: $brand-pink;
+      background: $dot;
       border-radius: 100%;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      z-index: 4;
+      z-index: 5;
 
       @media (width <= 768px) {
         width: 12px;
@@ -515,7 +518,7 @@ sidebar {
         height: 135px;
       }
       .half1 {
-        background: $brand-pink;
+        background: $second;
         height: 50%;
         width: 100%;
       }
@@ -548,7 +551,7 @@ sidebar {
       }
 
       .half1 {
-        background: #afd174;
+        background: $min;
         height: 50%;
         width: 100%;
       }
@@ -581,7 +584,7 @@ sidebar {
       }
 
       .half1 {
-        background: #c2c9cf;
+        background: $hour;
         height: 50%;
         width: 100%;
       }
@@ -881,6 +884,12 @@ sidebar {
   .hire-me-btns {
     @include mif.flex-col;
     gap: 15px;
+    @media (width <= 768px) {
+    }
+    @media (width <= 520px) {
+    }
+    @media (width <= 320px) {
+    }
 
     a {
       &:nth-child(1) {
@@ -891,6 +900,11 @@ sidebar {
           $gradient-mid: #ff6f61,
           $gradient-end: #d44638
         );
+        span {
+          @media (width <= 415px) {
+            align-items: baseline;
+          }
+        }
       }
 
       &:nth-child(2) {
@@ -901,6 +915,10 @@ sidebar {
           $gradient-mid: #88d958,
           $gradient-end: #25d366
         );
+      }
+
+      span {
+        overflow-wrap: anywhere;
       }
     }
   }

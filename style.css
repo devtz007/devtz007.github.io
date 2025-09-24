@@ -503,17 +503,13 @@ a {
 
 .hamburger {
   position: absolute;
-  top: 25px;
-  left: 25px;
+  z-index: 2;
+  top: 10px;
+  left: 10px;
   font-size: 2em;
   font-weight: 900;
   color: #3097bf;
-  position: absolute;
-  top: 25px;
-  left: 25px;
-  z-index: 2;
   font-size: 25px;
-  display: flex;
   display: none;
 }
 @media (max-width: 768px) {
@@ -655,7 +651,7 @@ sidebar nav .btn-active {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #111827;
+  background: transparent;
   /* Time numbers */
   /*times indicator*/
   /*seconds*/
@@ -685,19 +681,20 @@ sidebar nav .btn-active {
   height: 100%;
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  background-image: url("./assets/media/mohaiminul_tazin.png");
+  top: -10px;
+  left: -5px;
+  background-color: transparent;
+  background-image: url("./assets/media/tz1_glass.png");
   background-repeat: no-repeat;
   background-position: center;
-  background-size: cover;
+  background-size: 50%;
   border-radius: 100%;
-  opacity: 0.2;
+  opacity: 0.04;
   transition: 0.6s all ease;
 }
 .profile .clock:hover::before {
   opacity: 1;
-  z-index: 5;
+  z-index: 6;
 }
 .profile .clock .three,
 .profile .clock .six,
@@ -752,13 +749,13 @@ sidebar nav .btn-active {
 .profile .clock .clock-center {
   width: 15px;
   height: 15px;
-  background: #e7717d;
+  background: #ffd662;
   border-radius: 100%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 4;
+  z-index: 5;
 }
 @media (width <= 768px) {
   .profile .clock .clock-center {
@@ -804,7 +801,7 @@ sidebar nav .btn-active {
   }
 }
 .profile .clock #seconds .half1 {
-  background: #e7717d;
+  background: #ffd662;
   height: 50%;
   width: 100%;
 }
@@ -839,7 +836,7 @@ sidebar nav .btn-active {
   }
 }
 .profile .clock #minutes .half1 {
-  background: #afd174;
+  background: #4caf50;
   height: 50%;
   width: 100%;
 }
@@ -874,7 +871,7 @@ sidebar nav .btn-active {
   }
 }
 .profile .clock #hours .half1 {
-  background: #c2c9cf;
+  background: #1da1f2;
   height: 50%;
   width: 100%;
 }
@@ -1327,6 +1324,11 @@ sidebar nav .btn-active {
 .hireMe .hire-me-btns a:nth-child(1):hover::before {
   opacity: 1;
 }
+@media (width <= 415px) {
+  .hireMe .hire-me-btns a:nth-child(1) span {
+    align-items: baseline;
+  }
+}
 .hireMe .hire-me-btns a:nth-child(2) {
   position: relative;
   overflow: hidden;
@@ -1389,6 +1391,9 @@ sidebar nav .btn-active {
 }
 .hireMe .hire-me-btns a:nth-child(2):hover::before {
   opacity: 1;
+}
+.hireMe .hire-me-btns a span {
+  overflow-wrap: anywhere;
 }
 
 .terms-condition h2 {
