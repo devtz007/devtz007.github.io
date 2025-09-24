@@ -159,8 +159,21 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // Github state forced update
-window.addEventListener("DOMContentLoaded", () => {
+/*window.addEventListener("DOMContentLoaded", () => {
   const img = document.getElementById("github-stats");
   // Append a timestamp to bust cache
   img.src = img.src.split("&v=")[0] + "&v=" + Date.now();
-});
+});*/
+
+// moving title text
+const msg =
+  " Mohaiminul Tazim (devtz007) | Web Developer & Cybersecurity Expert |";
+let i = 0;
+
+function scrollTitle() {
+  document.title = msg.substring(i) + msg.substring(0, i);
+  i = (i + 1) % msg.length;
+  setTimeout(scrollTitle, 200); // speed (lower is faster)
+}
+
+scrollTitle();
