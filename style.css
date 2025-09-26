@@ -638,6 +638,18 @@ sidebar nav .btn-active {
 .profile::before {
   background-image: url("./assets//media/code.jpg");
 }
+.profile .scroll-bar {
+  height: -moz-min-content;
+  height: min-content;
+}
+.profile .scroll-bar .my_container_1 {
+  padding-bottom: 2px;
+}
+@media (width <= 320px) {
+  .profile .scroll-bar .my_container_1 {
+    padding-bottom: 2px;
+  }
+}
 .profile .profile-image {
   display: flex;
   justify-content: center;
@@ -651,7 +663,7 @@ sidebar nav .btn-active {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: transparent;
+  margin: 20px;
   /* Time numbers */
   /*times indicator*/
   /*seconds*/
@@ -689,7 +701,7 @@ sidebar nav .btn-active {
   background-position: center;
   background-size: 50%;
   border-radius: 100%;
-  opacity: 0.02;
+  opacity: 0.1;
   transition: 0.6s all ease;
 }
 .profile .clock:hover::before {
@@ -775,9 +787,24 @@ sidebar nav .btn-active {
     height: 10px;
   }
 }
-.profile .clock #seconds {
+.profile .clock .half2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.8em;
+  position: absolute;
+  content: "";
+  top: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 25px;
+  height: 25px;
+  padding: 2px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.profile .clock .seconds {
   height: 230px;
-  background: none;
   width: 1px;
   position: absolute;
   z-index: 4;
@@ -786,31 +813,30 @@ sidebar nav .btn-active {
   flex-direction: column;
 }
 @media (width <= 768px) {
-  .profile .clock #seconds {
+  .profile .clock .seconds {
     height: 200px;
   }
 }
 @media (width <= 520px) {
-  .profile .clock #seconds {
+  .profile .clock .seconds {
     height: 180px;
   }
 }
 @media (width <= 320px) {
-  .profile .clock #seconds {
+  .profile .clock .seconds {
     height: 135px;
   }
 }
-.profile .clock #seconds .half1 {
+.profile .clock .seconds .half1 {
   background: #ffd662;
   height: 50%;
   width: 100%;
 }
-.profile .clock #seconds .half2 {
-  background: none;
-  height: 50%;
-  width: 100%;
+.profile .clock .seconds .half2 {
+  color: #ffd662;
+  border: 1px solid #ffd662;
 }
-.profile .clock #minutes {
+.profile .clock .minutes {
   height: 190px;
   width: 2px;
   position: absolute;
@@ -818,34 +844,33 @@ sidebar nav .btn-active {
   transform-origin: 50% 50%;
 }
 @media (width <= 768px) {
-  .profile .clock #minutes {
+  .profile .clock .minutes {
     height: 165px;
     width: 1.8px;
   }
 }
 @media (width <= 520px) {
-  .profile .clock #minutes {
+  .profile .clock .minutes {
     height: 145px;
     width: 1.8px;
   }
 }
 @media (width <= 320px) {
-  .profile .clock #minutes {
+  .profile .clock .minutes {
     height: 110px;
     width: 1.5px;
   }
 }
-.profile .clock #minutes .half1 {
+.profile .clock .minutes .half1 {
   background: #4caf50;
   height: 50%;
   width: 100%;
 }
-.profile .clock #minutes .half2 {
-  background: none;
-  height: 50%;
-  width: 100%;
+.profile .clock .minutes .half2 {
+  color: #4caf50;
+  border: 1px solid #4caf50;
 }
-.profile .clock #hours {
+.profile .clock .hours {
   height: 160px;
   width: 3px;
   position: absolute;
@@ -853,32 +878,31 @@ sidebar nav .btn-active {
   transform-origin: 50% 50%;
 }
 @media (width <= 768px) {
-  .profile .clock #hours {
+  .profile .clock .hours {
     height: 135px;
     width: 2.5px;
   }
 }
 @media (width <= 520px) {
-  .profile .clock #hours {
+  .profile .clock .hours {
     height: 120px;
     width: 2.5px;
   }
 }
 @media (width <= 320px) {
-  .profile .clock #hours {
+  .profile .clock .hours {
     height: 90px;
     width: 2px;
   }
 }
-.profile .clock #hours .half1 {
+.profile .clock .hours .half1 {
   background: #1da1f2;
   height: 50%;
   width: 100%;
 }
-.profile .clock #hours .half2 {
-  background: none;
-  height: 50%;
-  width: 100%;
+.profile .clock .hours .half2 {
+  color: #1da1f2;
+  border: 1px solid #1da1f2;
 }
 .profile .social-icons {
   display: flex;
@@ -988,6 +1012,9 @@ sidebar nav .btn-active {
 }
 .profile .cv-download:hover::before {
   opacity: 1;
+}
+.profile .cv-download span {
+  gap: 10px;
 }
 
 .info {

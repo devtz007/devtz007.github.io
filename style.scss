@@ -377,6 +377,19 @@ sidebar {
     background-image: url("./assets//media/code.jpg");
   }
 
+  //scroll bar
+  .scroll-bar {
+    height: min-content;
+
+    .my_container_1 {
+      padding-bottom: 2px;
+
+      @media (width <= 320px) {
+        padding-bottom: 2px;
+      }
+    }
+  }
+
   .profile-image {
     @include mif.flex-jc-ac;
   }
@@ -386,11 +399,12 @@ sidebar {
     height: 250px;
     width: 250px;
     border-radius: 100%;
+    //border: 1px solid rgb(37, 211, 102, 0.5);
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: transparent;
+    margin: 20px;
 
     @media (width <= 768px) {
       height: 225px;
@@ -418,7 +432,7 @@ sidebar {
       background-position: center;
       background-size: 50%;
       border-radius: 100%;
-      opacity: 0.02;
+      opacity: 0.1;
       transition: 0.6s all ease;
     }
 
@@ -497,10 +511,24 @@ sidebar {
       }
     }
 
+    .half2 {
+      @include mif.flex-jc-ac;
+      font-size: 0.8em;
+      position: absolute;
+      content: "";
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 25px;
+      height: 25px;
+      padding: 2px;
+      border-radius: 4px;
+      white-space: nowrap;
+    }
+
     /*seconds*/
-    #seconds {
+    .seconds {
       height: 230px;
-      background: none;
       width: 1px;
       position: absolute;
       z-index: 4;
@@ -523,14 +551,13 @@ sidebar {
         width: 100%;
       }
       .half2 {
-        background: none;
-        height: 50%;
-        width: 100%;
+        color: $second;
+        border: 1px solid $second;
       }
     }
 
     /*minutes*/
-    #minutes {
+    .minutes {
       height: 190px;
       width: 2px;
       position: absolute;
@@ -556,14 +583,13 @@ sidebar {
         width: 100%;
       }
       .half2 {
-        background: none;
-        height: 50%;
-        width: 100%;
+        color: $min;
+        border: 1px solid $min;
       }
     }
 
     /*hours*/
-    #hours {
+    .hours {
       height: 160px;
       width: 3px;
       position: absolute;
@@ -589,9 +615,8 @@ sidebar {
         width: 100%;
       }
       .half2 {
-        background: none;
-        height: 50%;
-        width: 100%;
+        color: $hour;
+        border: 1px solid $hour;
       }
     }
   }
@@ -652,6 +677,9 @@ sidebar {
       $gradient-end: #88d958,
       $use-gradient: true
     );
+    span {
+      gap: 10px;
+    }
   }
 }
 

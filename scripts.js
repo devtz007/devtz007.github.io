@@ -69,24 +69,57 @@ function imgChange(id) {
   }
 }
 
-/* profile image clock*/
+/* profile image clock */
 function imageClock() {
   const now = new Date();
-  const h = 30 * ((now.getHours() % 12) + now.getMinutes() / 60); // 30 degrees hour
-  const m = 6 * now.getMinutes(); // 6 degrees every minute
-  const s = 6 * now.getSeconds(); // 6 degrees every second
-  // setting the rotate CSS attribute to those degree values -->
-  document.getElementById("seconds").style.cssText =
-    "-webkit-transform:rotate(" + s + "deg);";
-  document.getElementById("minutes").style.cssText =
-    "-webkit-transform:rotate(" + m + "deg);";
-  document.getElementById("hours").style.cssText =
-    "-webkit-transform:rotate(" + h + "deg);";
+  const hours = now.getHours();
+  const minutes = now.getMinutes();
+  const seconds = now.getSeconds();
 
-  setTimeout(imageClock, 1000); // calling the function every second
+  const h = 30 * ((hours % 12) + minutes / 60); // 30deg per hour + minute offset
+  const m = 6 * minutes; // 6deg per minute
+  const sDeg = 6 * seconds; // 6deg per second
+
+  // collections (could be multiple clocks)
+  const secEls = document.getElementsByClassName("seconds");
+  const minEls = document.getElementsByClassName("minutes");
+  const hourEls = document.getElementsByClassName("hours");
+
+  // update all seconds elements
+  Array.from(secEls).forEach((secEl) => {
+    if (!secEl) return;
+    secEl.style.transform = `rotate(${sDeg}deg)`;
+    // update child with class .half2 if exists
+    const half2 = secEl.querySelector(".half2");
+    if (half2) {
+      half2.textContent = String(seconds).padStart(2, "0");
+    }
+    secEl.setAttribute("data-second", String(seconds));
+  });
+
+  // update all minutes elements
+  Array.from(minEls).forEach((minEl) => {
+    if (!minEl) return;
+    minEl.style.transform = `rotate(${m}deg)`;
+    // optionally update minute display inside a child, similar to seconds
+    const minuteLabel = minEl.querySelector(".half2");
+    if (minuteLabel) minuteLabel.textContent = String(minutes).padStart(2, "0");
+  });
+
+  // update all hours elements
+  Array.from(hourEls).forEach((hourEl) => {
+    if (!hourEl) return;
+    hourEl.style.transform = `rotate(${h}deg)`;
+    const hourLabel = hourEl.querySelector(".half2");
+    if (hourLabel)
+      hourLabel.textContent = String(hours % 12 || 12).padStart(2, "0");
+  });
+
+  // repeat every second
+  setTimeout(imageClock, 1000);
 }
+
 window.onload = imageClock;
-imageClock();
 
 /*button color change*/
 let c = 0;
