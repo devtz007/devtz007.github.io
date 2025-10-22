@@ -1121,6 +1121,69 @@ sidebar nav .btn-active {
 .info .my_container_3 .sub_container_1_1 .row .image_content_type_1 {
   width: 500px;
 }
+.info .my_container_4 .sub_container_1_1 a {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.1rem;
+  padding: 10px 22px;
+  text-align: center;
+  border-radius: 8px;
+  border: 1px solid #dc143c;
+  background: transparent;
+  color: #dc143c;
+  z-index: 0;
+  will-change: transform, color;
+  /* Make content above the pseudo-element */
+  transition: transform 0.3s ease-in-out;
+}
+.info .my_container_4 .sub_container_1_1 a > * {
+  position: relative;
+  z-index: 1;
+  transition: color 0.3s ease-in-out;
+}
+@media (width <= 768px) {
+  .info .my_container_4 .sub_container_1_1 a {
+    font-size: 1em;
+  }
+}
+@media (width <= 520px) {
+  .info .my_container_4 .sub_container_1_1 a {
+    padding: 8px 20px;
+  }
+}
+@media (width <= 320px) {
+  .info .my_container_4 .sub_container_1_1 a {
+    font-size: 0.9em;
+    padding: 6px 18px;
+  }
+}
+.info .my_container_4 .sub_container_1_1 a::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(100deg, #dc143c 0%, #ff4500 50%, #dc143c 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  z-index: 0;
+  will-change: opacity;
+}
+.info .my_container_4 .sub_container_1_1 a span {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+}
+.info .my_container_4 .sub_container_1_1 a:hover > * {
+  color: white;
+}
+.info .my_container_4 .sub_container_1_1 a:hover::before {
+  opacity: 1;
+}
 
 /*.skills {
   &::before {

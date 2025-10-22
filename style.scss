@@ -741,6 +741,23 @@ sidebar {
       }
     }
   }
+
+  .my_container_4 {
+    .sub_container_1_1 {
+      a {
+        @include mre.btn-type-1(
+          $text-color: #dc143c,
+          $border-color: #dc143c,
+          // crimson
+          $gradient-start: #dc143c,
+          // crimson
+          $gradient-mid: #ff4500,
+          // orange-red for a smoother blend
+          $gradient-end: #dc143c // crimson
+        );
+      }
+    }
+  }
 }
 
 // skills
