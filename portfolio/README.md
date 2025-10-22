@@ -1,4 +1,4 @@
-## Demo Projects and Proof of Work.
+## Demo projects and proof of work
 
 ## Web Development
 
