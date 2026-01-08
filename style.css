@@ -1018,6 +1018,7 @@ sidebar nav .btn-active {
 }
 
 .info {
+  position: relative; /* allow absolute positioning of the indicator */
   text-align: center;
   position: relative;
   overflow-y: auto;
@@ -1495,4 +1496,40 @@ sidebar nav .btn-active {
 .terms-condition a {
   font-size: 1.3em;
   color: #a0b3c7;
+}
+
+/* Scroll indicator for page2 */
+.page .scroll-indicator {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 16px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 999px;
+  padding: 8px 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: #ffffff;
+  font-size: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.6);
+  transition: transform 160ms ease, opacity 160ms ease;
+  z-index: 5;
+}
+.page .scroll-indicator:hover {
+  transform: translateX(-50%) translateY(-4px);
+}
+.page .scroll-indicator i {
+  display: inline-block;
+  animation: page-bounce 1.4s infinite;
+}
+@keyframes page-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
 }/*# sourceMappingURL=style.css.map */

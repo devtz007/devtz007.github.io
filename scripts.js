@@ -210,3 +210,28 @@ function scrollTitle() {
 }
 
 scrollTitle();
+
+// Page2 scroll indicator handler
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.getElementById("page2-scroll-down");
+  if (!btn) return;
+
+  btn.addEventListener("click", function () {
+    const page2 = document.getElementById("page2");
+    const sb = page2 ? page2.querySelector(".scroll-bar") : null;
+
+    // If the scroll-bar inside page2 is scrollable, scroll it to bottom
+    if (sb && sb.scrollHeight > sb.clientHeight) {
+      sb.scrollTo({ top: sb.scrollHeight, behavior: "smooth" });
+      return;
+    }
+
+    // Otherwise, try to reveal the next section (page3) or bring page2 bottom into view
+    const next = document.getElementById("page3");
+    if (next) {
+      next.scrollIntoView({ behavior: "smooth", block: "start" });
+    } else if (page2) {
+      page2.scrollIntoView({ behavior: "smooth", block: "end" });
+    }
+  });
+});
