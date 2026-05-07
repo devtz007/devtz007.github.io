@@ -17,9 +17,14 @@
 - **Technologies**: React, TypeScript, SCSS, Vite.
 - **Description**: A fast tutor finder application built with React and Vite, designed to help students connect with qualified tutors based on subject, location, and availability.
 - **Role**: (Front-End Developer)
-- **Responsive status**: Mobile Responsive
+- **Responsive status**: None Responsive
 - **Links**:-
 - [https://tutor-finder-2-react-vite.vercel.app](https://tutor-finder-2-react-vite.vercel.app)
+- [https://tutor-finder-2-react-vite.vercel.app/tutor_finder](https://tutor-finder-2-react-vite.vercel.app/tutor_finder)
+- [https://tutor-finder-2-react-vite.vercel.app//tutor_details](https://tutor-finder-2-react-vite.vercel.app//tutor_details)
+- [https://tutor-finder-2-react-vite.vercel.app/dashboard/student](https://tutor-finder-2-react-vite.vercel.app/dashboard/student)
+- [https://tutor-finder-2-react-vite.vercel.app/login](https://tutor-finder-2-react-vite.vercel.app/login)
+- [https://tutor-finder-2-react-vite.vercel.app/registration](https://tutor-finder-2-react-vite.vercel.app/registration)
 
 ---
 
