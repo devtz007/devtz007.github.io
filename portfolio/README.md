@@ -21,7 +21,7 @@
 - **Links**:-
 - [https://tutor-finder-2-react-vite.vercel.app](https://tutor-finder-2-react-vite.vercel.app)
 - [https://tutor-finder-2-react-vite.vercel.app/tutor_finder](https://tutor-finder-2-react-vite.vercel.app/tutor_finder)
-- [https://tutor-finder-2-react-vite.vercel.app//tutor_details](https://tutor-finder-2-react-vite.vercel.app//tutor_details)
+- [https://tutor-finder-2-react-vite.vercel.app/tutor_details](https://tutor-finder-2-react-vite.vercel.app/tutor_details)
 - [https://tutor-finder-2-react-vite.vercel.app/dashboard/student](https://tutor-finder-2-react-vite.vercel.app/dashboard/student)
 - [https://tutor-finder-2-react-vite.vercel.app/login](https://tutor-finder-2-react-vite.vercel.app/login)
 - [https://tutor-finder-2-react-vite.vercel.app/registration](https://tutor-finder-2-react-vite.vercel.app/registration)
